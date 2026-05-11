@@ -16,6 +16,38 @@ const statCards = [
   },
 ];
 
+const paymentFeatureCards = [
+  {
+    title: "Simplify Administration",
+    src: "/assets/payment-card-1-transparent.png",
+  },
+  {
+    title: "Enhance Patient Experience",
+    src: "/assets/payment-card-2-transparent.png",
+  },
+  {
+    title: "Increase Cash Flow",
+    src: "/assets/payment-card-3-transparent.png",
+  },
+  {
+    title: "HIPAA-Compliant Workflows",
+    src: "/assets/payment-card-4-transparent.png",
+  },
+];
+
+const partnerLogos = [
+  { name: "Dentrix", src: "/assets/denttrix.jpg" },
+  { name: "Open Dental Software", src: "/assets/opdend.jpg" },
+  { name: "Eaglesoft", src: "/assets/eaglesoft.jpg" },
+  { name: "ClearDent", src: "/assets/cleard-6372e9e.jpg" },
+  { name: "Carestream Dental", src: "/assets/carext.jpg" },
+  { name: "DSN", src: "/assets/logo-dsn.png" },
+  { name: "Planet DDS", src: "/assets/logo-planet-dds.png" },
+  { name: "Tracker", src: "/assets/logo-tracker.png" },
+  { name: "Practice-Web", src: "/assets/logo-practice-web.png" },
+  { name: "QuickBooks", src: "/assets/dgrf.jpg" },
+];
+
 export default function HomePage() {
   return (
     <div className="pb-20">
@@ -32,12 +64,12 @@ export default function HomePage() {
           alt="Strictly Dental hero"
           width={2560}
           height={1600}
-          className="h-[410px] w-full object-cover object-top sm:h-[500px] md:h-[620px] lg:h-[700px] xl:h-[760px]"
+          className="h-auto w-full"
           priority
         />
       </section>
 
-      <section className="sd-container -mt-12 relative z-10 grid gap-8 py-12 md:grid-cols-3">
+      <section className="sd-container relative z-10 grid gap-8 py-16 md:grid-cols-3 lg:py-20">
         {statCards.map((card) => (
           <article key={card.value} className="sd-card px-8 py-10 text-center">
             <h2 className="mb-5 text-5xl font-bold text-[var(--sd-navy)]">
@@ -48,16 +80,23 @@ export default function HomePage() {
         ))}
       </section>
 
-      <section className="sd-lavender py-24">
-        <div className="sd-container text-center">
-          <h2 className="sd-section-title mb-5">
+      <section className="bg-[#cbc5de] py-16 lg:py-20">
+        <div className="sd-container">
+          <h2 className="mb-10 text-center text-4xl leading-tight font-bold tracking-normal text-[var(--sd-navy)] md:text-5xl lg:mb-12">
             Payments Designed for Dental Practices
           </h2>
-          <p className="mx-auto max-w-4xl text-xl leading-9 text-[var(--sd-text-soft)]">
-            Reduce costs, streamline billing, and improve cash flow with the
-            same visual language and service structure used on
-            strictlydental.com.
-          </p>
+          <div className="mx-auto grid max-w-[84rem] gap-5 md:grid-cols-2 xl:grid-cols-4">
+            {paymentFeatureCards.map((card) => (
+              <Image
+                key={card.title}
+                src={card.src}
+                alt={card.title}
+                width={2560}
+                height={2560}
+                className="h-auto w-full bg-transparent"
+              />
+            ))}
+          </div>
         </div>
       </section>
 
@@ -91,28 +130,36 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="sd-container py-8 text-center">
-        <h2 className="sd-section-title mb-4">Our Partners</h2>
-        <p className="mb-10 text-2xl font-medium">
+      <section className="bg-white py-16 text-center lg:py-20">
+        <div className="sd-container">
+          <h2 className="mb-8 text-4xl leading-tight font-bold text-[var(--sd-navy)] md:text-5xl">
+            Our Partners
+          </h2>
+          <p className="mb-12 text-2xl font-semibold text-[#171717]">
           Work Seamlessly with Your Dental Softwares
-        </p>
-        <div className="sd-card overflow-hidden p-4 md:p-8">
-          <Image
-            src="/assets/dgrf.jpg"
-            alt="Strictly Dental partners"
-            width={1095}
-            height={1095}
-            className="mx-auto h-auto w-full max-w-[880px]"
-          />
+          </p>
+          <div className="mx-auto grid max-w-[92rem] grid-cols-2 items-center gap-x-9 gap-y-8 sm:grid-cols-3 lg:grid-cols-5 lg:gap-x-12 lg:gap-y-9">
+            {partnerLogos.map((logo) => (
+              <div key={logo.name} className="relative mx-auto h-16 w-full max-w-[13.5rem]">
+                <Image
+                  src={logo.src}
+                  alt={logo.name}
+                  fill
+                  sizes="(min-width: 1024px) 14rem, (min-width: 640px) 33vw, 50vw"
+                  className="object-contain"
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-      <section className="sd-container py-20">
-        <div className="flex flex-col items-center justify-center gap-6 rounded-[2rem] bg-white px-6 py-10 text-center shadow-[0_20px_60px_rgba(38,41,116,0.08)] md:flex-row md:text-left">
-          <h3 className="text-[clamp(2rem,3vw,3.3rem)] font-bold text-[var(--sd-navy)]">
+      <section className="sd-lavender py-10 lg:py-12">
+        <div className="sd-container flex flex-col items-center justify-center gap-5 text-center md:flex-row md:text-left lg:gap-6">
+          <h3 className="text-[1.75rem] leading-tight font-bold text-[var(--sd-navy)] md:text-[2.1rem] lg:text-[2.35rem]">
             Give Your Patients a Better Payment Experience
           </h3>
-          <Link href="/contact-us" className="sd-button px-10 text-sm">
+          <Link href="/contact-us" className="sd-button min-h-[3.15rem] min-w-[13.5rem] px-9 text-sm">
             Request Demo
           </Link>
         </div>
