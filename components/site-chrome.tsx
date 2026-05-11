@@ -131,6 +131,7 @@ function ChatBubble() {
 export function SiteChrome({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const isHome = pathname === "/";
 
   const expandedLinks = useMemo(
     () =>
@@ -146,26 +147,38 @@ export function SiteChrome({ children }: { children: React.ReactNode }) {
 
   return (
     <>
-      <div className="bg-[var(--sd-navy)] py-2 text-center text-sm tracking-[0.03em] text-white">
-        <Link href="#" className="hover:opacity-80">
-          Ahora disponible en Español 🇪🇸
-        </Link>
-      </div>
+      {!isHome && (
+        <div className="bg-[var(--sd-navy)] py-2 text-center text-sm tracking-[0.03em] text-white">
+          <Link href="#" className="hover:opacity-80">
+            Ahora disponible en Español 🇪🇸
+          </Link>
+        </div>
+      )}
 
-      <header className="sticky top-0 z-30 border-b border-[var(--sd-border)] bg-white/95 backdrop-blur">
-        <div className="sd-container flex min-h-[96px] items-center justify-between gap-6 py-4">
+      <header
+        className={`sticky top-0 z-30 bg-white/95 backdrop-blur ${
+          isHome ? "" : "border-b border-[var(--sd-border)]"
+        }`}
+      >
+        <div
+          className={`sd-container flex items-center justify-between gap-6 ${
+            isHome ? "min-h-[86px] py-3 lg:min-h-[108px] lg:py-4" : "min-h-[96px] py-4"
+          }`}
+        >
           <Link href="/" className="shrink-0">
             <Image
               src="/assets/sdf.png"
               alt="Strictly Dental"
               width={283}
               height={113}
-              className="h-auto w-[180px] md:w-[210px]"
+              className={`h-auto ${
+                isHome ? "w-[156px] sm:w-[176px] lg:w-[212px]" : "w-[180px] md:w-[210px]"
+              }`}
               priority
             />
           </Link>
 
-          <nav className="hidden items-center gap-8 lg:flex">
+          <nav className={`hidden items-center lg:flex ${isHome ? "gap-10" : "gap-8"}`}>
             {navLinks.map((item) => {
               const active = item.children
                 ? item.children.some((child) => isActivePath(pathname, child.href))

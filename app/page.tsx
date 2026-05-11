@@ -19,21 +19,20 @@ const statCards = [
 export default function HomePage() {
   return (
     <div className="pb-20">
-      <section className="sd-container pt-8 pb-0">
-        <div className="flex justify-end">
-          <div className="rounded-none bg-neutral-300 px-6 py-3 text-center text-[clamp(1.15rem,2vw,2rem)] font-bold text-[#3544d5]">
-            Support: (800) 800-8240
+      <section className="relative overflow-hidden">
+        <div className="pointer-events-none absolute inset-x-0 top-0 z-10">
+          <div className="sd-container flex justify-end pt-1 sm:pt-3 lg:pt-5">
+            <div className="w-full max-w-[16rem] bg-[#cbcbcb] px-3.75 py-1.6 text-center text-[0.9rem] font-extrabold tracking-[0.01em] text-[#3942d7] sm:max-w-[17.5rem] sm:px-4.25 sm:py-1.9 sm:text-[0.98rem] md:max-w-[19rem] md:px-4.5 md:py-2 md:text-[1.08rem] lg:mr-[4rem] lg:max-w-[20.5rem] lg:px-5.25 lg:py-2.45 lg:text-[1.24rem]">
+              Support: (800) 800-8240
+            </div>
           </div>
         </div>
-      </section>
-
-      <section className="relative overflow-hidden">
         <Image
           src="/assets/new-header.png"
           alt="Strictly Dental hero"
           width={2560}
           height={1600}
-          className="h-auto w-full"
+          className="h-[410px] w-full object-cover object-top sm:h-[500px] md:h-[620px] lg:h-[700px] xl:h-[760px]"
           priority
         />
       </section>
