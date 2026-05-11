@@ -1,0 +1,113 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #121212;
+  --sd-navy: #262974;
+  --sd-navy-dark: #1f215f;
+  --sd-blue: #376cb4;
+  --sd-orange: #f7941d;
+  --sd-lavender: #d2cdea;
+  --sd-light: #f5f4f7;
+  --sd-border: #e7e7ee;
+  --sd-text-soft: #5e6178;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-montserrat);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+}
+
+a,
+button {
+  transition:
+    color 180ms ease,
+    background-color 180ms ease,
+    border-color 180ms ease,
+    opacity 180ms ease,
+    transform 180ms ease;
+}
+
+.font-display {
+  font-family: var(--font-archivo), Arial, Helvetica, sans-serif;
+}
+
+.sd-container {
+  margin-inline: auto;
+  width: min(100% - 2rem, 1240px);
+}
+
+.sd-button {
+  background: var(--sd-navy);
+  border-radius: 999px;
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  min-height: 3.5rem;
+  padding-inline: 1.8rem;
+  text-transform: uppercase;
+}
+
+.sd-button:hover {
+  background: var(--sd-navy-dark);
+}
+
+.sd-card {
+  background: white;
+  border: 1px solid var(--sd-border);
+  border-radius: 1.75rem;
+  box-shadow: 0 8px 20px rgba(17, 24, 39, 0.08);
+}
+
+.sd-muted {
+  color: var(--sd-text-soft);
+}
+
+.sd-section-title {
+  color: var(--sd-navy);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  line-height: 1.05;
+}
+
+.sd-page-title {
+  color: var(--sd-navy);
+  font-size: clamp(2.4rem, 4vw, 4rem);
+  font-weight: 700;
+  line-height: 1.05;
+  text-align: center;
+}
+
+.sd-chip {
+  background: var(--sd-orange);
+  border-radius: 1.2rem;
+  color: white;
+  display: inline-flex;
+  padding: 0.15em 0.35em;
+}
+
+.sd-outline-text {
+  text-shadow:
+    -2px -2px 0 #ffffff,
+    2px -2px 0 #ffffff,
+    -2px 2px 0 #ffffff,
+    2px 2px 0 #ffffff;
+}
+
+.sd-lavender {
+  background: var(--sd-lavender);
+}
