@@ -100,14 +100,6 @@ button {
   padding: 0.15em 0.35em;
 }
 
-.sd-outline-text {
-  text-shadow:
-    -2px -2px 0 #ffffff,
-    2px -2px 0 #ffffff,
-    -2px 2px 0 #ffffff,
-    2px 2px 0 #ffffff;
-}
-
 .sd-lavender {
   background: var(--sd-lavender);
 }

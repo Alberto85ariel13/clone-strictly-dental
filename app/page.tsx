@@ -19,21 +19,11 @@ const statCards = [
 export default function HomePage() {
   return (
     <div className="pb-20">
-      <section className="sd-container pt-14 pb-8">
-        <div className="mb-10 flex justify-end">
+      <section className="sd-container pt-8 pb-0">
+        <div className="flex justify-end">
           <div className="rounded-none bg-neutral-300 px-6 py-3 text-center text-[clamp(1.15rem,2vw,2rem)] font-bold text-[#3544d5]">
             Support: (800) 800-8240
           </div>
-        </div>
-
-        <div className="space-y-4 text-center">
-          <h1 className="font-display text-[clamp(3rem,7vw,6.5rem)] leading-[0.96] tracking-tight text-[#171a1f]">
-            Save up to <span className="sd-chip">100%</span> on credit card
-            processing
-          </h1>
-          <p className="text-[clamp(1.6rem,3vw,3rem)] text-[var(--sd-blue)]">
-            - Smarter Payments for Modern Dental Practices -
-          </p>
         </div>
       </section>
 
@@ -46,11 +36,6 @@ export default function HomePage() {
           className="h-auto w-full"
           priority
         />
-        <div className="pointer-events-none absolute inset-x-0 top-[10%] hidden px-8 md:block lg:px-24">
-          <p className="sd-outline-text max-w-[540px] text-[clamp(2rem,3.8vw,4.2rem)] font-bold leading-none text-[#191b20]">
-            Shape the Future of Your Practice.
-          </p>
-        </div>
       </section>
 
       <section className="sd-container -mt-12 relative z-10 grid gap-8 py-12 md:grid-cols-3">
