@@ -80,8 +80,8 @@ export default function HomePage() {
         ))}
       </section>
 
-      <section className="bg-[#cbc5de] py-16 lg:py-20">
-        <div className="sd-container">
+      <section className="sd-dental-parallax py-16 lg:py-20">
+        <div className="sd-container relative z-10">
           <h2 className="mb-10 text-center text-4xl leading-tight font-bold tracking-normal text-[var(--sd-navy)] md:text-5xl lg:mb-12">
             Payments Designed for Dental Practices
           </h2>
@@ -154,8 +154,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="sd-lavender py-10 lg:py-12">
-        <div className="sd-container flex flex-col items-center justify-center gap-5 text-center md:flex-row md:text-left lg:gap-6">
+      <section className="sd-dental-parallax sd-dental-parallax--cta py-10 lg:py-12">
+        <div className="sd-container relative z-10 flex flex-col items-center justify-center gap-5 text-center md:flex-row md:text-left lg:gap-6">
           <h3 className="text-[1.75rem] leading-tight font-bold text-[var(--sd-navy)] md:text-[2.1rem] lg:text-[2.35rem]">
             Give Your Patients a Better Payment Experience
           </h3>
